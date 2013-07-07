@@ -13,7 +13,8 @@
 
       (dolist (connection connections)
 	(write-sequence (thnappy:compress-byte-vector message)
-			(usocket:socket-stream connection))))))
+			(usocket:socket-stream connection))
+	(force-output (usocket:socket-stream connection))))))
 
 (defun send (where message)
   (push (list where message) *message-outbox*))
@@ -21,5 +22,6 @@
 (defun receive ()
   (if (eq *state* :server)
       ;; Receive from all clients
-      
+      nil
+      nil
       ))
