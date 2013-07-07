@@ -2,4 +2,4 @@
 *.fasl
 *.org
 \#*#
-
+ltxpng/*
