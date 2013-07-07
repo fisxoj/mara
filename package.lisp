@@ -1,5 +1,11 @@
 ;;;; package.lisp
 
 (defpackage #:mara
-  (:use #:cl))
+  (:use #:cl)
+  (:export #:tick
+
+	   #:mara-class
+
+	   #:serialize
+	   #:deserialize))
 
