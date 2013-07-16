@@ -7,24 +7,23 @@
   :license "LGPLv3"
   :depends-on (#:usocket
                #:userial
+	       #:thnappy
 	       #:trivial-garbage
 	       #:closer-mop)
-  :components ((:file "package")
-	       (:module src
-		:components ((:module metaclass
-			      :components ((:file "metaclass")
+  :components ((:module src
+		:components ((:file "package")
+			     (:file "timing")
+			     (:module metaclass
+			      :components ((:file "db")
 					   (:file "class-serializer")
-					   (:file "db")))
+					   (:file "metaclass")
+					   ))
 			     (:module signaling
 			      :components ((:file "opcodes")
 					   (:file "message")
 					   (:file "sending")
 					   (:file "receiving")
 					   (:file "client")
-					   (:file "server"))))
-;			(:module timing
-;			 :components ((:file "interpolation")))
-	       )
-
-               (:file "mara")))
+					   (:file "server")))
+			     (:file "mara")))))
 
