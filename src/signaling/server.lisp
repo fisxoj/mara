@@ -1,8 +1,6 @@
 (in-package #:mara)
 
-(defvar *server* t)
-
-(defvar *server-socket* nil)
+(defvar *servers* nil)
 
 (defun server-p () *server*)
 

@@ -13,10 +13,6 @@
      ;; Client note to server for objects it controls
      :chat
      ;; Text messages between players
-     :ack
-     ;; Acknowledges a sent message by repeating its timestamp
-     :compressed
-     ;; Message is compressed with thnappy, decompress and re-process
      :ping
      ;; Used to asses latency
      :pong

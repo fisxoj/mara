@@ -2,10 +2,11 @@
 
 (in-package #:mara)
 
-(defparameter *full-update-interval* 0.1f0
-  "Update all objects every this many seconds")
+(defun tick ()
+  (setf *current-time* (get-internal-real-time))
+  (if (server-p)
+      (maybe-batch-update)
+      (maybe-delta-update))
 
-(defun current-latency ()
-  ;; Calculate current latency for prediction calculations
-  )
-
+  (flush-outbox)
+  (flush-inbox))

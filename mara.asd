@@ -11,6 +11,7 @@
 	       #:trivial-garbage
 	       #:closer-mop)
   :components ((:module src
+		:serial t
 		:components ((:file "package")
 			     (:file "timing")
 			     (:module metaclass

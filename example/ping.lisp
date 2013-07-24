@@ -5,18 +5,17 @@
 
 (in-package #:ping)
 
-(defclass ball (mara-object)
+(mara::defmara ball ()
   ((position :type (simple-array integer (2))
 	     :initform (make-array 2 :element-type 'integer
 				     :initial-contents '(0 0))
-	     :accessor ball-position)
-   (color :type sdl:color
-	  :initform (sdl:color :r (random 255)
-			       :g (random 255)
-			       :b (random 255))
+	     :accessor ball-position
+	     :serializer :vec2
+	     :managed t)
+   (color :initform #(1 1 0)
 	  :accessor ball-color)))
 
-(defun main ()
+(defun main (&optional (server t))
   (sdl:with-init ()
     (sdl:window 800 600)
     (setf (sdl:frame-rate) 60)
